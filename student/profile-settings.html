@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f4ef">
+
+    <title>Profile &amp; Settings | Foundev</title>
+    <meta
+        name="description"
+        content="Manage your Foundev student profile, account details and workspace preferences."
+    >
+
+    <link rel="icon" href="../assets/images/foundev-logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Shared workspace styles -->
+    <link rel="stylesheet" href="../assets/css/student-dashboard.css">
+
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="../assets/css/profile-settings.css">
+
+    <script src="../assets/js/profile-settings.js" defer></script>
+</head>
+
+<body>
+    <div class="app-shell">
+
+        <!-- Mobile sidebar overlay -->
+        <div
+            class="sidebar-overlay"
+            id="sidebar-overlay"
+            hidden
+        ></div>
+
+        <!-- =================================================
+             SHARED SIDEBAR
+        ================================================== -->
+        <aside class="sidebar" id="sidebar">
+
+            <a class="brand" href="dashboard.html" aria-label="Foundev workspace home">
+                <img
+                    src="../assets/images/foundev-logo.png"
+                    alt="Foundev"
+                    class="brand-logo"
+                >
+
+                <span class="brand-caption">STUDENT WORKSPACE</span>
+            </a>
+
+            <div class="sidebar-divider"></div>
+
+            <p class="nav-caption">WORKSPACE</p>
+
+            <nav class="navigation" aria-label="Main navigation">
+
+                <a href="dashboard.html" class="nav-link" data-page="overview">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                        <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                        <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+                        <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+                    </svg>
+                    <span>Overview</span>
+                </a>
+
+                <a href="my-team.html" class="nav-link" data-page="team">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>My Team</span>
+                </a>
+
+                <a href="explore-projects.html" class="nav-link" data-page="explore">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"></path>
+                        <circle cx="15.5" cy="13.5" r="2.5"></circle>
+                        <path d="m17.3 15.3 2 2"></path>
+                    </svg>
+                    <span>Explore Projects</span>
+                </a>
+
+                <a href="my-requests.html" class="nav-link" data-page="requests">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <path d="M14 2v6h6M8 13h8M8 17h8"></path>
+                    </svg>
+                    <span>My Requests</span>
+                </a>
+
+                <a href="my-projects.html" class="nav-link" data-page="projects">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <rect x="3" y="7" width="18" height="14" rx="2"></rect>
+                        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        <path d="M3 12h18"></path>
+                    </svg>
+                    <span>My Projects</span>
+                </a>
+
+                <a
+                    href="profile-settings.html"
+                    class="nav-link active"
+                    data-page="profile"
+                    aria-current="page"
+                >
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.6a8 8 0 0 1-1.7 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.7-1l-1.7.6-1.4-2.4L7.3 15a8 8 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.6a8 8 0 0 1 1.7-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.7 1l1.7-.6 1.4 2.4-1.4 1.1a8 8 0 0 1-.1 2Z"></path>
+                    </svg>
+                    <span>Profile &amp; Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="help-area">
+                    <span class="help-area-title">Need a hand?</span>
+                    <span class="help-area-description">
+                        We're here to help you.
+                    </span>
+
+                    <a href="support.html" class="help-link">
+                        Contact support
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <a href="../../index.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M15 18 9 12l6-6"></path>
+                        <path d="M9 12h12"></path>
+                        <path d="M3 4v16"></path>
+                    </svg>
+                    <span>Back to Foundev</span>
+                </a>
+
+                <a href="../../index.html" class="logout-link" id="student-logout">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M10 17l5-5-5-5"></path>
+                        <path d="M15 12H3"></path>
+                        <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+                    </svg>
+                    <span>Log out</span>
+                </a>
+
+            </div>
+        </aside>
+
+        <!-- =================================================
+             MAIN WORKSPACE
+        ================================================== -->
+        <main class="main-area">
+
+            <!-- Shared topbar -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        class="icon-button mobile-menu"
+                        id="mobile-menu"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="sidebar"
+                        aria-expanded="false"
+                    >
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+
+                    <div class="breadcrumb" aria-label="Breadcrumb">
+                        <a href="dashboard.html">Student workspace</a>
+                        <span aria-hidden="true">/</span>
+                        <span aria-current="page">Profile &amp; Settings</span>
+                    </div>
+
+                </div>
+
+                <div class="topbar-actions">
+
+                    <form class="search-form" id="workspace-search" role="search">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <path d="m16 16 4 4"></path>
+                        </svg>
+
+                        <input
+                            type="search"
+                            id="workspace-search-input"
+                            name="q"
+                            placeholder="Search workspace..."
+                            aria-label="Search workspace"
+                        >
+
+                        <kbd>/</kbd>
+                    </form>
+
+                    <a
+                        href="notifications.html"
+                        class="notification-button"
+                        aria-label="Notifications"
+                    >
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+                            <path d="M10 21h4"></path>
+                        </svg>
+
+                        <span id="notification-dot" hidden></span>
+                    </a>
+
+                    <a
+                        href="profile-settings.html"
+                        class="profile-button"
+                        aria-label="Your profile and settings"
+                    >
+                        <span class="avatar" id="student-avatar">S</span>
+
+                        <span class="profile-copy">
+                            <strong id="student-name">Student</strong>
+                            <span id="student-institution">Student workspace</span>
+                        </span>
+
+                        <svg
+                            class="profile-chevron"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            aria-hidden="true"
+                        >
+                            <path d="m7 10 5 5 5-5"></path>
+                        </svg>
+                    </a>
+
+                </div>
+            </header>
+
+            <!-- =================================================
+                 PROFILE SETTINGS CONTENT
+            ================================================== -->
+            <div class="page-content profile-settings-page">
+
+                <section class="settings-intro">
+                    <div class="settings-intro-copy">
+                        <p class="eyebrow">YOUR SPACE, YOUR WAY</p>
+
+                        <h1>
+                            Profile &amp; Settings<span class="title-period">.</span>
+                        </h1>
+
+                        <p class="settings-intro-description">
+                            Manage your student profile and keep your Foundev
+                            workspace information up to date.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Profile overview -->
+                <section class="settings-profile-overview" aria-labelledby="profile-overview-heading">
+
+                    <div class="settings-avatar-large" id="profile-avatar-large">
+                        S
+                    </div>
+
+                    <div class="settings-profile-identity">
+                        <p class="eyebrow">STUDENT ACCOUNT</p>
+
+                        <h2 id="profile-overview-heading">
+                            <span id="profile-display-name">Student</span>
+                        </h2>
+
+                        <p id="profile-display-institution">
+                            Student workspace
+                        </p>
+
+                        <p class="settings-profile-email" id="profile-display-email">
+                            Email not available
+                        </p>
+                    </div>
+
+                    <span class="settings-account-label">
+                        Student
+                    </span>
+
+                </section>
+
+                <!-- Profile form -->
+                <section class="settings-section" aria-labelledby="personal-information-heading">
+
+                    <div class="settings-section-heading">
+                        <div>
+                            <p class="eyebrow">YOUR DETAILS</p>
+                            <h2 id="personal-information-heading">
+                                Personal information
+                            </h2>
+                            <p>
+                                Review the details associated with your student account.
+                            </p>
+                        </div>
+                    </div>
+
+                    <form id="profile-settings-form" novalidate>
+
+                        <div class="settings-form-grid">
+
+                            <div class="settings-field">
+                                <label for="profile-full-name">Full name</label>
+                                <input
+                                    type="text"
+                                    id="profile-full-name"
+                                    name="full_name"
+                                    autocomplete="name"
+                                    placeholder="Your full name"
+                                    maxlength="150"
+                                    required
+                                >
+                                <small class="field-error" id="full-name-error"></small>
+                            </div>
+
+                            <div class="settings-field">
+                                <label for="profile-email">Email address</label>
+                                <input
+                                    type="email"
+                                    id="profile-email"
+                                    name="email"
+                                    autocomplete="email"
+                                    placeholder="you@example.com"
+                                    maxlength="190"
+                                    readonly
+                                    aria-describedby="email-help"
+                                >
+                                <small id="email-help" class="field-help">
+                                    Contact your institution if your account email needs to change.
+                                </small>
+                            </div>
+
+                            <div class="settings-field">
+                                <label for="profile-phone">Phone number</label>
+                                <input
+                                    type="tel"
+                                    id="profile-phone"
+                                    name="phone"
+                                    autocomplete="tel"
+                                    placeholder="Enter your phone number"
+                                    maxlength="25"
+                                >
+                            </div>
+
+                            <div class="settings-field">
+                                <label for="profile-institution">Institution</label>
+                                <input
+                                    type="text"
+                                    id="profile-institution"
+                                    name="institution_name"
+                                    placeholder="Your institution"
+                                    maxlength="200"
+                                    readonly
+                                    aria-describedby="institution-help"
+                                >
+                                <small id="institution-help" class="field-help">
+                                    Institution details are managed by your institute.
+                                </small>
+                            </div>
+
+                            <div class="settings-field">
+                                <label for="profile-course">Course or department</label>
+                                <input
+                                    type="text"
+                                    id="profile-course"
+                                    name="course"
+                                    placeholder="Your course or department"
+                                    maxlength="150"
+                                >
+                            </div>
+
+                            <div class="settings-field">
+                                <label for="profile-year">Academic year</label>
+                                <select id="profile-year" name="academic_year">
+                                    <option value="">Select academic year</option>
+                                    <option value="1">First year</option>
+                                    <option value="2">Second year</option>
+                                    <option value="3">Third year</option>
+                                    <option value="4">Fourth year</option>
+                                    <option value="5">Fifth year</option>
+                                    <option value="graduated">Graduated</option>
+                                </select>
+                            </div>
+
+                            <div class="settings-field settings-field-full">
+                                <label for="profile-bio">About me</label>
+                                <textarea
+                                    id="profile-bio"
+                                    name="bio"
+                                    rows="4"
+                                    maxlength="1000"
+                                    placeholder="Tell your teammates a little about yourself, your interests and what you enjoy building."
+                                ></textarea>
+                                <small class="field-help">
+                                    Keep it short and focused on your interests and skills.
+                                </small>
+                            </div>
+
+                        </div>
+
+                        <div class="settings-form-footer">
+                            <p
+                                class="settings-form-message"
+                                id="profile-form-message"
+                                role="status"
+                                aria-live="polite"
+                            ></p>
+
+                            <button
+                                type="submit"
+                                class="settings-primary-button"
+                                id="save-profile-button"
+                            >
+                                Save changes
+                                <span aria-hidden="true">↗</span>
+                            </button>
+                        </div>
+
+                    </form>
+
+                </section>
+
+                <!-- Account preferences -->
+                <section class="settings-section" aria-labelledby="preferences-heading">
+
+                    <div class="settings-section-heading">
+                        <div>
+                            <p class="eyebrow">WORKSPACE PREFERENCES</p>
+                            <h2 id="preferences-heading">Preferences</h2>
+                            <p>
+                                Choose how you would like to receive workspace updates.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="settings-preference-row">
+                        <div class="settings-preference-copy">
+                            <h3>Email notifications</h3>
+                            <p>
+                                Receive relevant updates about projects, requests and your workspace.
+                            </p>
+                        </div>
+
+                        <label class="settings-toggle" for="email-notifications">
+                            <input
+                                type="checkbox"
+                                id="email-notifications"
+                                name="email_notifications"
+                                checked
+                            >
+                            <span class="settings-toggle-track"></span>
+                            <span class="sr-only">
+                                Enable email notifications
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="settings-preference-row">
+                        <div class="settings-preference-copy">
+                            <h3>Project updates</h3>
+                            <p>
+                                Keep up with changes to projects and team activity.
+                            </p>
+                        </div>
+
+                        <label class="settings-toggle" for="project-notifications">
+                            <input
+                                type="checkbox"
+                                id="project-notifications"
+                                name="project_notifications"
+                                checked
+                            >
+                            <span class="settings-toggle-track"></span>
+                            <span class="sr-only">
+                                Enable project notifications
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="settings-preference-footer">
+                        <p
+                            id="preferences-message"
+                            class="settings-form-message"
+                            role="status"
+                            aria-live="polite"
+                        ></p>
+
+                        <button
+                            type="button"
+                            class="settings-secondary-button"
+                            id="save-preferences-button"
+                        >
+                            Save preferences
+                        </button>
+                    </div>
+
+                </section>
+
+                <!-- Security -->
+                <section class="settings-section" aria-labelledby="security-heading">
+
+                    <div class="settings-section-heading">
+                        <div>
+                            <p class="eyebrow">ACCOUNT SECURITY</p>
+                            <h2 id="security-heading">Security</h2>
+                            <p>
+                                Protect your account and keep your sign-in details secure.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="settings-security-row">
+                        <div class="settings-security-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+                                <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                                <path d="M12 14v3"></path>
+                            </svg>
+                        </div>
+
+                        <div class="settings-security-copy">
+                            <h3>Password and sign-in</h3>
+                            <p>
+                                If you need to reset your password, use the account recovery
+                                process provided by your institution or Foundev.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="settings-security-row">
+                        <div class="settings-security-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"></path>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+
+                        <div class="settings-security-copy">
+                            <h3>Account access</h3>
+                            <p>
+                                Never share your password or verification codes with other people.
+                            </p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- Account actions -->
+                <section class="settings-section settings-account-section" aria-labelledby="account-actions-heading">
+
+                    <div class="settings-section-heading">
+                        <div>
+                            <p class="eyebrow">ACCOUNT ACTIONS</p>
+                            <h2 id="account-actions-heading">Manage your account</h2>
+                            <p>
+                                Return to your workspace or sign out of your student account.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="settings-account-actions">
+                        <a href="dashboard.html" class="settings-secondary-button">
+                            Back to overview
+                        </a>
+
+                        <button
+                            type="button"
+                            class="settings-danger-button"
+                            id="settings-logout-button"
+                        >
+                            Log out
+                        </button>
+                    </div>
+
+                </section>
+
+                <footer class="page-footer">
+                    <span>Foundev Student Workspace</span>
+                    <span>Learn. Build. Launch.</span>
+                </footer>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>

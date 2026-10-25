@@ -1,0 +1,983 @@
+/* =========================================================
+   FOUNDEV — PROFILE & SETTINGS
+   File: assets/css/profile-settings.css
+
+   Depends on: assets/css/student-dashboard.css
+   Theme: Ivory / Espresso / Caramel Gold
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   PAGE FOUNDATION
+--------------------------------------------------------- */
+
+.profile-settings-page {
+    padding-top: 35px;
+    padding-bottom: 34px;
+    animation: profile-page-enter 450ms ease both;
+}
+
+.profile-settings-page *,
+.profile-settings-page *::before,
+.profile-settings-page *::after {
+    box-sizing: border-box;
+}
+
+.profile-settings-page button,
+.profile-settings-page input,
+.profile-settings-page select,
+.profile-settings-page textarea {
+    font: inherit;
+}
+
+.profile-settings-page button,
+.profile-settings-page a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.profile-settings-page button:focus-visible,
+.profile-settings-page input:focus-visible,
+.profile-settings-page select:focus-visible,
+.profile-settings-page textarea:focus-visible,
+.profile-settings-page a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.profile-settings-page [hidden] {
+    display: none !important;
+}
+
+.profile-settings-page .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   INTRODUCTION
+--------------------------------------------------------- */
+
+.settings-intro {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 29px;
+}
+
+.settings-intro-copy {
+    min-width: 0;
+}
+
+.settings-intro .eyebrow,
+.settings-section-heading .eyebrow,
+.settings-profile-identity .eyebrow {
+    margin: 0 0 8px;
+    color: #956941;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.7;
+}
+
+.settings-intro h1 {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 4vw, 43px);
+    font-weight: 800;
+    letter-spacing: -1.8px;
+    line-height: 1.22;
+}
+
+.settings-intro .title-period {
+    color: var(--accent);
+}
+
+.settings-intro-description {
+    max-width: 560px;
+    margin: 12px 0 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+/* ---------------------------------------------------------
+   PROFILE OVERVIEW
+--------------------------------------------------------- */
+
+.settings-profile-overview {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+    min-width: 0;
+    margin-bottom: 37px;
+    padding: 24px 0;
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+}
+
+.settings-avatar-large {
+    display: grid;
+    flex: 0 0 76px;
+    width: 76px;
+    height: 76px;
+    place-items: center;
+    color: #fffaf2;
+    background: var(--accent-dark);
+    border: 3px solid #ead8bf;
+    border-radius: 50%;
+    font-family: var(--font-heading);
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+.settings-profile-identity {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.settings-profile-identity .eyebrow {
+    margin-bottom: 4px;
+    font-size: 8px;
+}
+
+.settings-profile-identity h2 {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.settings-profile-identity > p:not(.eyebrow) {
+    margin: 4px 0 0;
+    color: var(--text-secondary);
+    font-size: 11px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.settings-profile-identity .settings-profile-email {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.settings-account-label {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 11px;
+    color: #795632;
+    background: #f3e7d5;
+    border: 1px solid #e5d2b6;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+
+/* ---------------------------------------------------------
+   SETTINGS SECTIONS
+--------------------------------------------------------- */
+
+.settings-section {
+    min-width: 0;
+    margin-top: 33px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line-strong);
+}
+
+.settings-section:first-of-type {
+    margin-top: 0;
+}
+
+.settings-section-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.settings-section-heading .eyebrow {
+    margin-bottom: 5px;
+}
+
+.settings-section-heading h2 {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-heading);
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    line-height: 1.5;
+}
+
+.settings-section-heading > div > p:last-child {
+    max-width: 570px;
+    margin: 7px 0 0;
+    color: var(--text-secondary);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+
+/* ---------------------------------------------------------
+   PROFILE FORM
+--------------------------------------------------------- */
+
+.settings-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 22px;
+}
+
+.settings-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 8px;
+}
+
+.settings-field-full {
+    grid-column: 1 / -1;
+}
+
+.settings-field label {
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.settings-field input,
+.settings-field select,
+.settings-field textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    color: var(--text);
+    background: rgba(255, 253, 248, 0.8);
+    border: 1px solid var(--line-strong);
+    border-radius: 5px;
+    outline: none;
+    font-size: 12px;
+    transition:
+        border-color var(--transition-normal),
+        background var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.settings-field input,
+.settings-field select {
+    min-height: 44px;
+    padding: 0 13px;
+}
+
+.settings-field textarea {
+    min-height: 112px;
+    padding: 12px 13px;
+    line-height: 1.8;
+    resize: vertical;
+}
+
+.settings-field input::placeholder,
+.settings-field textarea::placeholder {
+    color: #a29483;
+}
+
+.settings-field input:hover:not([readonly]),
+.settings-field select:hover,
+.settings-field textarea:hover {
+    border-color: #c6ad91;
+}
+
+.settings-field input:focus,
+.settings-field select:focus,
+.settings-field textarea:focus {
+    background: var(--surface);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(141, 89, 43, 0.08);
+}
+
+.settings-field input[readonly] {
+    color: var(--text-secondary);
+    background: #f0ece4;
+    border-color: var(--line);
+    cursor: default;
+}
+
+.settings-field input[readonly]:focus {
+    border-color: var(--line-strong);
+    box-shadow: none;
+}
+
+.settings-field select {
+    cursor: pointer;
+}
+
+.settings-field select:invalid {
+    color: var(--text-muted);
+}
+
+.field-help {
+    display: block;
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.field-error {
+    display: block;
+    color: #a53f32;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.settings-field input[aria-invalid="true"],
+.settings-field textarea[aria-invalid="true"] {
+    border-color: #b84e40;
+    box-shadow: 0 0 0 3px rgba(184, 78, 64, 0.07);
+}
+
+
+/* ---------------------------------------------------------
+   BUTTONS
+--------------------------------------------------------- */
+
+.settings-primary-button,
+.settings-secondary-button,
+.settings-danger-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 42px;
+    padding: 0 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        background var(--transition-normal),
+        color var(--transition-normal),
+        border-color var(--transition-normal),
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.settings-primary-button {
+    color: #fffaf2;
+    background: var(--accent-dark);
+    border: 1px solid var(--accent-dark);
+}
+
+.settings-primary-button:hover {
+    color: #fffaf2;
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 7px 16px rgba(87, 55, 30, 0.12);
+    transform: translateY(-1px);
+}
+
+.settings-primary-button > span {
+    font-size: 14px;
+}
+
+.settings-secondary-button {
+    color: var(--accent-dark);
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+}
+
+.settings-secondary-button:hover {
+    background: #f4e8d7;
+    border-color: #c6ad91;
+    transform: translateY(-1px);
+}
+
+.settings-danger-button {
+    color: #9d4137;
+    background: transparent;
+    border: 1px solid #dfb8af;
+}
+
+.settings-danger-button:hover {
+    color: #fffaf2;
+    background: #9d4137;
+    border-color: #9d4137;
+}
+
+.settings-primary-button:disabled,
+.settings-secondary-button:disabled,
+.settings-danger-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+    box-shadow: none;
+}
+
+.settings-form-footer,
+.settings-preference-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+}
+
+.settings-form-message {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 11px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.settings-form-message:empty {
+    display: none;
+}
+
+.settings-form-message.is-success {
+    color: #39734b;
+}
+
+.settings-form-message.is-error {
+    color: #a53f32;
+}
+
+
+/* ---------------------------------------------------------
+   PREFERENCES
+--------------------------------------------------------- */
+
+.settings-preference-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 19px 0;
+    border-top: 1px solid var(--line);
+}
+
+.settings-preference-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.settings-preference-copy h3,
+.settings-security-copy h3 {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+}
+
+.settings-preference-copy p,
+.settings-security-copy p {
+    max-width: 580px;
+    margin: 5px 0 0;
+    color: var(--text-secondary);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+
+/* ---------------------------------------------------------
+   CUSTOM TOGGLE
+--------------------------------------------------------- */
+
+.settings-toggle {
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    width: 43px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.settings-toggle input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.settings-toggle-track {
+    position: absolute;
+    inset: 0;
+    background: #d9d0c3;
+    border: 1px solid #c9beae;
+    border-radius: 99px;
+    transition:
+        background var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+.settings-toggle-track::before {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 17px;
+    height: 17px;
+    background: #fffdf8;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(40, 28, 18, 0.15);
+    content: "";
+    transition: transform var(--transition-normal);
+}
+
+.settings-toggle input:checked + .settings-toggle-track {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+.settings-toggle input:checked + .settings-toggle-track::before {
+    transform: translateX(18px);
+}
+
+.settings-toggle input:focus-visible + .settings-toggle-track {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.settings-toggle input:disabled + .settings-toggle-track {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+
+/* ---------------------------------------------------------
+   SECURITY
+--------------------------------------------------------- */
+
+.settings-security-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+}
+
+.settings-security-icon {
+    display: grid;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    color: var(--accent-dark);
+    background: #f3e7d5;
+    border: 1px solid #e5d2b6;
+    border-radius: 50%;
+}
+
+.settings-security-icon svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.settings-security-copy {
+    flex: 1;
+    min-width: 0;
+}
+
+.settings-security-copy p {
+    max-width: 650px;
+}
+
+
+/* ---------------------------------------------------------
+   ACCOUNT ACTIONS
+--------------------------------------------------------- */
+
+.settings-account-section {
+    padding-bottom: 25px;
+}
+
+.settings-account-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding-top: 19px;
+    border-top: 1px solid var(--line);
+}
+
+
+/* ---------------------------------------------------------
+   PAGE FOOTER
+--------------------------------------------------------- */
+
+.profile-settings-page .page-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 23px;
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+
+/* ---------------------------------------------------------
+   ANIMATION
+--------------------------------------------------------- */
+
+@keyframes profile-page-enter {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .profile-settings-page {
+        padding-top: 29px;
+    }
+
+    .settings-profile-overview {
+        gap: 17px;
+    }
+
+    .settings-form-grid {
+        column-gap: 18px;
+        row-gap: 19px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+    .profile-settings-page {
+        padding: 25px 20px 30px;
+    }
+
+    .settings-intro {
+        margin-bottom: 23px;
+    }
+
+    .settings-intro h1 {
+        font-size: 33px;
+        letter-spacing: -1.4px;
+    }
+
+    .settings-intro-description {
+        margin-top: 9px;
+        font-size: 11px;
+    }
+
+    .settings-profile-overview {
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-bottom: 29px;
+        padding: 20px 0;
+    }
+
+    .settings-avatar-large {
+        flex-basis: 61px;
+        width: 61px;
+        height: 61px;
+        font-size: 21px;
+    }
+
+    .settings-profile-identity {
+        flex-basis: calc(100% - 80px);
+    }
+
+    .settings-profile-identity h2 {
+        font-size: 17px;
+    }
+
+    .settings-account-label {
+        margin-left: 75px;
+    }
+
+    .settings-section {
+        margin-top: 27px;
+        padding-bottom: 24px;
+    }
+
+    .settings-section-heading {
+        margin-bottom: 20px;
+    }
+
+    .settings-section-heading h2 {
+        font-size: 18px;
+    }
+
+    .settings-form-grid {
+        grid-template-columns: 1fr;
+        row-gap: 18px;
+    }
+
+    .settings-field-full {
+        grid-column: auto;
+    }
+
+    .settings-field input,
+    .settings-field select {
+        min-height: 45px;
+    }
+
+    .settings-form-footer,
+    .settings-preference-footer {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .settings-form-footer .settings-primary-button,
+    .settings-preference-footer .settings-secondary-button {
+        width: 100%;
+    }
+
+    .settings-preference-row {
+        align-items: flex-start;
+        gap: 13px;
+        padding: 17px 0;
+    }
+
+    .settings-preference-copy h3,
+    .settings-security-copy h3 {
+        font-size: 12px;
+    }
+
+    .settings-preference-copy p,
+    .settings-security-copy p {
+        font-size: 10px;
+    }
+
+    .settings-security-row {
+        gap: 12px;
+    }
+
+    .settings-security-icon {
+        flex-basis: 37px;
+        width: 37px;
+        height: 37px;
+    }
+
+    .settings-account-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .settings-account-actions > * {
+        width: 100%;
+    }
+
+    .profile-settings-page .page-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   SMALL MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 380px) {
+    .profile-settings-page {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .settings-intro h1 {
+        font-size: 29px;
+    }
+
+    .settings-profile-overview {
+        gap: 12px;
+    }
+
+    .settings-avatar-large {
+        flex-basis: 53px;
+        width: 53px;
+        height: 53px;
+    }
+
+    .settings-profile-identity {
+        flex-basis: calc(100% - 68px);
+    }
+
+    .settings-account-label {
+        margin-left: 65px;
+    }
+
+    .settings-section-heading h2 {
+        font-size: 17px;
+    }
+
+    .settings-preference-row {
+        gap: 9px;
+    }
+
+    .settings-toggle {
+        transform: scale(0.92);
+        transform-origin: top right;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-settings-page,
+    .profile-settings-page *,
+    .profile-settings-page *::before,
+    .profile-settings-page *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ==========================================
+   PROFILE SETTINGS — SIDEBAR SUPPORT SECTION
+   ========================================== */
+
+.profile-settings-page ~ .sidebar-bottom .help-area,
+.app-shell:has(.profile-settings-page) .help-area {
+    margin-top: auto;
+    padding: 24px 28px 18px;
+    border-top: 1px solid #e8d9c8;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.app-shell:has(.profile-settings-page) .help-area .support-card,
+.app-shell:has(.profile-settings-page) .help-area .help-card {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    align-items: start;
+    column-gap: 14px;
+    width: 100%;
+}
+
+.app-shell:has(.profile-settings-page) .help-area .support-icon,
+.app-shell:has(.profile-settings-page) .help-area .help-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #985323;
+    background: #f7ecdc;
+    border: 1px solid #ead3b7;
+    border-radius: 11px;
+}
+
+.app-shell:has(.profile-settings-page) .help-area .support-copy,
+.app-shell:has(.profile-settings-page) .help-area .help-copy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+.app-shell:has(.profile-settings-page) .help-area .support-title,
+.app-shell:has(.profile-settings-page) .help-area .help-title {
+    margin: 1px 0 0;
+    color: #35261d;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.app-shell:has(.profile-settings-page) .help-area .support-description,
+.app-shell:has(.profile-settings-page) .help-area .help-description {
+    margin: 0;
+    color: #86715f;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12.5px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.app-shell:has(.profile-settings-page) .help-area .support-link,
+.app-shell:has(.profile-settings-page) .help-area .help-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1px;
+    padding: 0;
+    color: #985323;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.app-shell:has(.profile-settings-page) .help-area .support-link:hover,
+.app-shell:has(.profile-settings-page) .help-area .help-link:hover {
+    color: #784019;
+}
+
+.app-shell:has(.profile-settings-page) .help-area svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+    .app-shell:has(.profile-settings-page) .help-area {
+        padding: 20px 24px 16px;
+    }
+}

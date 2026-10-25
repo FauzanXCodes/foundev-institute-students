@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8F1E5">
+
+    <title>My Team | Foundev Student Workspace</title>
+    <meta name="description" content="Manage your team, collaborate with students, and track team invitations on Foundev.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Shared dashboard styling -->
+    <link rel="stylesheet" href="../assets/css/student-dashboard.css">
+
+    <!-- My Team page styling -->
+    <link rel="stylesheet" href="../assets/css/my-team.css">
+
+    <!-- My Team page JavaScript -->
+    <script src="../assets/js/my-team.js" defer></script>
+</head>
+
+<body>
+<div class="app-shell">
+
+    <!-- Mobile sidebar overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+    <aside class="sidebar" id="sidebar">
+
+        <a class="brand" href="dashboard.html" aria-label="Foundev student workspace">
+            <img
+                class="brand-logo"
+                src="../assets/images/foundev-logo.png"
+                alt="Foundev"
+            >
+            <span class="brand-caption">STUDENT WORKSPACE</span>
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <p class="nav-caption">WORKSPACE</p>
+
+        <nav class="navigation" aria-label="Student workspace navigation">
+
+            <a class="nav-link" href="dashboard.html" data-page="overview">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="7" height="7" rx="1"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1"/>
+                </svg>
+                <span>Overview</span>
+            </a>
+
+            <a
+                class="nav-link active"
+                href="my-team.html"
+                data-page="team"
+                aria-current="page"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9.5" cy="7" r="4"/>
+                    <path d="M20 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                <span>My Team</span>
+            </a>
+
+            <a class="nav-link" href="explore-projects.html" data-page="explore">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v3"/>
+                    <path d="M3 7v12a2 2 0 0 0 2 2h8"/>
+                    <circle cx="17" cy="16" r="3"/>
+                    <path d="m19.2 18.2 2.3 2.3"/>
+                </svg>
+                <span>Explore Projects</span>
+            </a>
+
+            <a class="nav-link" href="my-requests.html" data-page="requests">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <path d="M14 2v6h6"/>
+                    <path d="M8 13h8M8 17h6"/>
+                </svg>
+                <span>My Requests</span>
+            </a>
+
+            <a class="nav-link" href="my-projects.html" data-page="projects">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="7" width="18" height="14" rx="2"/>
+                    <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                    <path d="M3 12h18"/>
+                </svg>
+                <span>My Projects</span>
+            </a>
+
+            <a class="nav-link" href="profile-settings.html" data-page="profile">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.6a8 8 0 0 1-1.8 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.8-1l-1.7.6-1.4-2.4 1.4-1.1a8 8 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.6a8 8 0 0 1 1.8-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.8 1l1.7-.6 1.4 2.4-1.4 1.1a8 8 0 0 1 0 2Z"/>
+                </svg>
+                <span>Profile &amp; Settings</span>
+            </a>
+
+        </nav>
+
+        <!-- Sidebar bottom -->
+        <div class="sidebar-bottom">
+
+            <div class="help-area">
+                <div class="help-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M9.5 9a2.5 2.5 0 0 1 4.8 1c0 1.7-2.3 2-2.3 3.5"/>
+                        <path d="M12 17h.01"/>
+                    </svg>
+                </div>
+
+                <div class="help-copy">
+                    <h3>Need a hand?</h3>
+                    <p>Questions about your team or projects? We're here to help.</p>
+                    <a href="support.html" class="support-link">
+                        Get support <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <a href="../../index.html" class="back-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m15 18-6-6 6-6"/>
+                </svg>
+                <span>Back to Foundev</span>
+            </a>
+
+            <button class="logout-link" id="student-logout" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M10 17l5-5-5-5"/>
+                    <path d="M15 12H3"/>
+                    <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/>
+                </svg>
+                <span>Sign out</span>
+            </button>
+
+        </div>
+    </aside>
+
+    <!-- =====================================================
+         MAIN WORKSPACE
+    ====================================================== -->
+    <main class="main-area">
+
+        <!-- Top navigation -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="icon-button mobile-menu"
+                    id="mobile-menu"
+                    type="button"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                    aria-controls="sidebar"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16"/>
+                    </svg>
+                </button>
+
+                <div class="breadcrumb">
+                    <span>Student workspace</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <strong>My Team</strong>
+                </div>
+
+            </div>
+
+            <div class="topbar-actions">
+
+                <form class="search-form" id="workspace-search" role="search">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"/>
+                        <path d="m16 16 4 4"/>
+                    </svg>
+
+                    <input
+                        id="workspace-search-input"
+                        type="search"
+                        placeholder="Search projects, teams..."
+                        aria-label="Search student workspace"
+                        autocomplete="off"
+                    >
+
+                    <kbd>/</kbd>
+                </form>
+
+                <a
+                    class="icon-button notification-button"
+                    href="notifications.html"
+                    aria-label="Notifications"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                        <path d="M10 21h4"/>
+                    </svg>
+                    <span class="notification-dot" id="notification-dot" hidden></span>
+                </a>
+
+                <a href="profile-settings.html" class="profile-button">
+                    <span class="avatar" id="student-avatar">ST</span>
+
+                    <span class="profile-copy">
+                        <strong id="student-name">Student</strong>
+                        <small id="student-institution">Student account</small>
+                    </span>
+
+                    <svg class="profile-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m7 10 5 5 5-5"/>
+                    </svg>
+                </a>
+
+            </div>
+        </header>
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+        <div class="page-content team-page-content">
+
+            <!-- Page introduction -->
+            <section class="team-intro">
+                <div class="team-intro-copy">
+                    <p class="eyebrow">BETTER TOGETHER</p>
+
+                    <h1>
+                        My Team<span class="title-period">.</span>
+                    </h1>
+
+                    <p class="team-intro-description">
+                        Bring people together, share ideas, and make meaningful
+                        progress as a team.
+                    </p>
+                </div>
+
+                <button
+                    class="team-primary-button"
+                    id="create-team-button"
+                    type="button"
+                >
+                    <span aria-hidden="true">＋</span>
+                    Create a team
+                </button>
+            </section>
+
+            <!-- Team summary -->
+            <section class="team-summary" aria-label="Team summary">
+
+                <div class="team-summary-item">
+                    <span class="summary-label">YOUR TEAM</span>
+                    <strong id="summary-team-name">Not in a team yet</strong>
+                    <span class="summary-caption" id="summary-team-caption">
+                        Your next collaboration starts here.
+                    </span>
+                </div>
+
+                <div class="team-summary-item">
+                    <span class="summary-label">TEAM MEMBERS</span>
+                    <strong id="summary-member-count">0</strong>
+                    <span class="summary-caption">
+                        People working together
+                    </span>
+                </div>
+
+                <div class="team-summary-item">
+                    <span class="summary-label">PENDING INVITATIONS</span>
+                    <strong id="summary-pending-count">0</strong>
+                    <span class="summary-caption">
+                        Invitations awaiting a response
+                    </span>
+                </div>
+
+            </section>
+
+            <!-- Team members -->
+            <section class="team-content-section" aria-labelledby="members-heading">
+
+                <div class="team-section-heading">
+                    <div>
+                        <p class="eyebrow">THE PEOPLE BEHIND THE PROGRESS</p>
+                        <h2 id="members-heading">Team members</h2>
+                    </div>
+
+                    <button
+                        class="team-secondary-button"
+                        id="invite-member-button"
+                        type="button"
+                    >
+                        <span aria-hidden="true">＋</span>
+                        Invite member
+                    </button>
+                </div>
+
+                <!-- Member search and filters -->
+                <div class="team-toolbar">
+
+                    <label class="member-search">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7"/>
+                            <path d="m16 16 4 4"/>
+                        </svg>
+
+                        <input
+                            id="member-search"
+                            type="search"
+                            placeholder="Find a team member..."
+                            aria-label="Find a team member"
+                            autocomplete="off"
+                        >
+                    </label>
+
+                    <label class="filter-control">
+                        <span class="sr-only">Filter members by role</span>
+
+                        <select id="role-filter">
+                            <option value="all">All roles</option>
+                            <option value="leader">Team leader</option>
+                            <option value="member">Member</option>
+                        </select>
+                    </label>
+
+                </div>
+
+                <!-- JavaScript renders members or the empty state here -->
+                <div
+                    class="team-member-list"
+                    id="team-member-list"
+                    aria-live="polite"
+                >
+                    <div class="team-empty-state">
+
+                        <div class="empty-illustration" aria-hidden="true">
+                            <svg viewBox="0 0 64 64">
+                                <circle cx="24" cy="21" r="9"/>
+                                <path d="M7 51v-5a17 17 0 0 1 34 0v5"/>
+                                <circle cx="46" cy="25" r="7"/>
+                                <path d="M45 40a13 13 0 0 1 12 13"/>
+                                <path d="M42 13a8 8 0 0 1 7 8"/>
+                            </svg>
+                        </div>
+
+                        <p class="eyebrow">EVERY GREAT IDEA STARTS SOMEWHERE</p>
+
+                        <h3>Your team story starts here.</h3>
+
+                        <p>
+                            Create a team to bring collaborators together, or
+                            wait for an invitation to join an existing team.
+                        </p>
+
+                        <button
+                            class="team-primary-button"
+                            id="empty-create-team-button"
+                            type="button"
+                        >
+                            Create your first team
+                            <span aria-hidden="true">↗</span>
+                        </button>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Invitations -->
+            <section class="invitation-section" aria-labelledby="invitation-heading">
+
+                <div class="team-section-heading">
+                    <div>
+                        <p class="eyebrow">COLLABORATION IN MOTION</p>
+                        <h2 id="invitation-heading">Invitations</h2>
+                    </div>
+
+                    <span class="invitation-count" id="invitation-count">
+                        0 pending
+                    </span>
+                </div>
+
+                <!-- JavaScript renders invitations here -->
+                <div class="invitation-list" id="invitation-list">
+
+                    <div class="invitation-empty">
+
+                        <span class="invitation-empty-mark" aria-hidden="true">
+                            ↗
+                        </span>
+
+                        <div>
+                            <strong>No pending invitations</strong>
+                            <p>
+                                Team invitations will appear here when available.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Footer -->
+            <footer class="page-footer">
+                <span>FOUNDEV · STUDENT WORKSPACE</span>
+                <span>Learn. Build. Launch.</span>
+            </footer>
+
+        </div>
+    </main>
+</div>
+
+<!-- =========================================================
+     CREATE TEAM MODAL
+========================================================== -->
+<div
+    class="team-modal-backdrop"
+    id="team-modal-backdrop"
+    hidden
+>
+    <section
+        class="team-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="team-modal-title"
+    >
+
+        <button
+            class="modal-close"
+            type="button"
+            data-close-modal
+            aria-label="Close create team dialog"
+        >
+            ×
+        </button>
+
+        <p class="eyebrow">START SOMETHING TOGETHER</p>
+
+        <h2 id="team-modal-title">Create your team</h2>
+
+        <p class="modal-description">
+            Give your team a name. You can invite collaborators once
+            team creation is connected.
+        </p>
+
+        <form id="create-team-form">
+
+            <label for="team-name-input">Team name</label>
+
+            <input
+                id="team-name-input"
+                name="team_name"
+                type="text"
+                maxlength="80"
+                placeholder="e.g. The Innovators"
+                autocomplete="organization"
+                required
+            >
+
+            <p
+                class="form-message"
+                id="create-team-message"
+                aria-live="polite"
+            ></p>
+
+            <button
+                class="team-primary-button modal-submit"
+                type="submit"
+            >
+                Continue
+                <span aria-hidden="true">↗</span>
+            </button>
+
+        </form>
+
+    </section>
+</div>
+
+<!-- =========================================================
+     INVITE MEMBER MODAL
+========================================================== -->
+<div
+    class="team-modal-backdrop"
+    id="invite-modal-backdrop"
+    hidden
+>
+    <section
+        class="team-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="invite-modal-title"
+    >
+
+        <button
+            class="modal-close"
+            type="button"
+            data-close-modal
+            aria-label="Close invite member dialog"
+        >
+            ×
+        </button>
+
+        <p class="eyebrow">MAKE ROOM FOR GREAT IDEAS</p>
+
+        <h2 id="invite-modal-title">Invite a member</h2>
+
+        <p class="modal-description">
+            Enter the email address of the student you want to invite.
+        </p>
+
+        <form id="invite-member-form">
+
+            <label for="invite-email-input">Student email</label>
+
+            <input
+                id="invite-email-input"
+                name="email"
+                type="email"
+                placeholder="student@example.com"
+                autocomplete="email"
+                required
+            >
+
+            <p
+                class="form-message"
+                id="invite-member-message"
+                aria-live="polite"
+            ></p>
+
+            <button
+                class="team-primary-button modal-submit"
+                type="submit"
+            >
+                Send invitation
+                <span aria-hidden="true">↗</span>
+            </button>
+
+        </form>
+
+    </section>
+</div>
+
+</body>
+</html>

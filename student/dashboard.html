@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8F1E5">
+
+    <title>Overview | Foundev Student Workspace</title>
+    <meta name="description" content="Manage your Foundev teams, explore projects, track requests, and work on approved projects.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/student-dashboard.css">
+    <script src="../assets/js/student-dashboard.js" defer></script>
+</head>
+
+<body>
+<div class="app-shell">
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+        <a class="brand" href="dashboard.html" aria-label="Foundev student workspace">
+            <img
+                class="brand-logo"
+                src="../assets/images/foundev-logo.png"
+                alt="Foundev"
+            >
+            <span class="brand-caption">STUDENT WORKSPACE</span>
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <p class="nav-caption">WORKSPACE</p>
+
+        <nav class="navigation" aria-label="Student workspace navigation">
+
+            <a class="nav-link active" href="dashboard.html"
+               data-page="overview" aria-current="page">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="7" height="7" rx="1"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1"/>
+                </svg>
+                <span>Overview</span>
+            </a>
+
+            <a class="nav-link" href="my-team.html" data-page="team">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9.5" cy="7" r="4"/>
+                    <path d="M20 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                <span>My Team</span>
+            </a>
+
+            <a class="nav-link" href="explore-projects.html" data-page="explore">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v3"/>
+                    <path d="M3 7v12a2 2 0 0 0 2 2h8"/>
+                    <circle cx="17" cy="16" r="3"/>
+                    <path d="m19.2 18.2 2.3 2.3"/>
+                </svg>
+                <span>Explore Projects</span>
+            </a>
+
+            <a class="nav-link" href="my-requests.html" data-page="requests">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <path d="M14 2v6h6"/>
+                    <path d="M8 13h8M8 17h6"/>
+                </svg>
+                <span>My Requests</span>
+            </a>
+
+            <a class="nav-link" href="my-projects.html" data-page="projects">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="7" width="18" height="14" rx="2"/>
+                    <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                    <path d="M3 12h18"/>
+                </svg>
+                <span>My Projects</span>
+            </a>
+
+            <a class="nav-link" href="profile-settings.html" data-page="profile">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.6a8 8 0 0 1-1.8 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.8-1l-1.7.6-1.4-2.4 1.4-1.1a8 8 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.6a8 8 0 0 1 1.8-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.8 1l1.7-.6 1.4 2.4-1.4 1.1a8 8 0 0 1 0 2Z"/>
+                </svg>
+                <span>Profile &amp; Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-area">
+                <div class="help-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M9.5 9a2.5 2.5 0 0 1 4.8 1c0 1.7-2.3 2-2.3 3.5"/>
+                        <path d="M12 17h.01"/>
+                    </svg>
+                </div>
+
+                <div class="help-copy">
+                    <h3>Need a hand?</h3>
+                    <p>Questions about your team or projects? We're here to help.</p>
+                    <a href="support.html" class="support-link">
+                        Get support <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <a href="../index.html" class="back-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m15 18-6-6 6-6"/>
+                </svg>
+                <span>Back to Foundev</span>
+            </a>
+
+            <button class="logout-link" id="student-logout" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M10 17l5-5-5-5"/>
+                    <path d="M15 12H3"/>
+                    <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/>
+                </svg>
+                <span>Sign out</span>
+            </button>
+
+        </div>
+    </aside>
+
+    <!-- Main workspace -->
+    <main class="main-area">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+                <button
+                    class="icon-button mobile-menu"
+                    id="mobile-menu"
+                    type="button"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                    aria-controls="sidebar"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16"/>
+                    </svg>
+                </button>
+
+                <div class="breadcrumb">
+                    <span>Student workspace</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <strong>Overview</strong>
+                </div>
+            </div>
+
+            <div class="topbar-actions">
+
+                <form class="search-form" id="workspace-search" role="search">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"/>
+                        <path d="m16 16 4 4"/>
+                    </svg>
+
+                    <input
+                        id="workspace-search-input"
+                        type="search"
+                        placeholder="Search projects, teams..."
+                        aria-label="Search student workspace"
+                        autocomplete="off"
+                    >
+
+                    <kbd>/</kbd>
+                </form>
+
+                <a class="icon-button notification-button"
+                   href="notifications.html" aria-label="Notifications">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                        <path d="M10 21h4"/>
+                    </svg>
+                    <span class="notification-dot" id="notification-dot"></span>
+                </a>
+
+                <a href="profile-settings.html" class="profile-button">
+                    <span class="avatar" id="student-avatar">ST</span>
+
+                    <span class="profile-copy">
+                        <strong id="student-name">Student</strong>
+                        <small id="student-institution">Student account</small>
+                    </span>
+
+                    <svg class="profile-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m7 10 5 5 5-5"/>
+                    </svg>
+                </a>
+
+            </div>
+        </header>
+
+        <div class="page-content">
+
+            <!-- Welcome section -->
+            <section class="welcome-section">
+
+                <div class="welcome-copy">
+                    <p class="eyebrow">YOUR SPACE. YOUR NEXT CHAPTER.</p>
+
+                    <h1 id="welcome-heading">Ideas become real here.</h1>
+
+                    <p class="welcome-description">
+                        Find your people, discover meaningful projects, and turn
+                        what you learn into something you can be proud of.
+                    </p>
+
+                    <a href="explore-projects.html" class="primary-link">
+                        Explore projects
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <div class="welcome-art" aria-hidden="true">
+                    <div class="art-orbit art-orbit-one"></div>
+                    <div class="art-orbit art-orbit-two"></div>
+
+                    <div class="art-logo-wrap">
+                        <img
+                            src="../assets/images/foundev-logo.png"
+                            alt=""
+                            class="welcome-logo"
+                        >
+                    </div>
+
+                    <span class="art-decoration art-decoration-one"></span>
+                    <span class="art-decoration art-decoration-two"></span>
+                </div>
+
+            </section>
+
+            <!-- Summary -->
+            <section class="overview-section" aria-labelledby="overview-heading">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">A LITTLE PROGRESS GOES A LONG WAY</p>
+                        <h2 id="overview-heading">Your workspace</h2>
+                    </div>
+
+                    <span class="section-note" id="dashboard-updated">
+                        Your progress, all in one place.
+                    </span>
+                </div>
+
+                <div class="overview-line">
+
+                    <a href="my-team.html" class="overview-item">
+                        <span class="overview-label">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M3 21v-2a6 6 0 0 1 12 0v2"/>
+                                <path d="M16 4a4 4 0 0 1 0 7"/>
+                            </svg>
+                            YOUR TEAM
+                        </span>
+
+                        <strong class="overview-number" id="team-count">—</strong>
+                        <span class="overview-detail">Team members</span>
+                        <span class="item-arrow" aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="my-requests.html" class="overview-item">
+                        <span class="overview-label">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v18h16V8z"/>
+                                <path d="M14 2v6h6M8 13h8M8 17h5"/>
+                            </svg>
+                            MY REQUESTS
+                        </span>
+
+                        <strong class="overview-number" id="request-count">—</strong>
+                        <span class="overview-detail">Awaiting a decision</span>
+                        <span class="item-arrow" aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="my-projects.html" class="overview-item">
+                        <span class="overview-label">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="7" width="18" height="14" rx="2"/>
+                                <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                <path d="M3 12h18"/>
+                            </svg>
+                            APPROVED PROJECTS
+                        </span>
+
+                        <strong class="overview-number" id="project-count">—</strong>
+                        <span class="overview-detail">Ready for your next step</span>
+                        <span class="item-arrow" aria-hidden="true">↗</span>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- Recent activity and next steps -->
+            <div class="workspace-columns">
+
+                <section class="activity-section" aria-labelledby="activity-heading">
+
+                    <div class="section-title-row">
+                        <div>
+                            <p class="eyebrow">YOUR LATEST UPDATES</p>
+                            <h2 id="activity-heading">Recent activity</h2>
+                        </div>
+
+                        <a href="my-requests.html" class="text-link">
+                            View requests <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+
+                    <div class="activity-list" id="activity-list" aria-live="polite">
+                        <p class="loading-message">Loading your latest activity...</p>
+                    </div>
+
+                </section>
+
+                <section class="next-section" aria-labelledby="next-heading">
+
+                    <div class="section-title-row">
+                        <div>
+                            <p class="eyebrow">KEEP THE MOMENTUM</p>
+                            <h2 id="next-heading">Your next move</h2>
+                        </div>
+                    </div>
+
+                    <div class="next-list">
+
+                        <a href="explore-projects.html" class="next-item">
+                            <span class="step-number">01</span>
+                            <span class="next-copy">
+                                <strong>Discover a project</strong>
+                                <small>Find an opportunity that matches your interests.</small>
+                            </span>
+                            <span class="next-arrow" aria-hidden="true">↗</span>
+                        </a>
+
+                        <a href="my-team.html" class="next-item">
+                            <span class="step-number">02</span>
+                            <span class="next-copy">
+                                <strong>Build your team</strong>
+                                <small>Bring the right people together around an idea.</small>
+                            </span>
+                            <span class="next-arrow" aria-hidden="true">↗</span>
+                        </a>
+
+                        <a href="my-requests.html" class="next-item">
+                            <span class="step-number">03</span>
+                            <span class="next-copy">
+                                <strong>Follow your requests</strong>
+                                <small>Stay up to date on reviews and approvals.</small>
+                            </span>
+                            <span class="next-arrow" aria-hidden="true">↗</span>
+                        </a>
+
+                        <a href="my-projects.html" class="next-item">
+                            <span class="step-number">04</span>
+                            <span class="next-copy">
+                                <strong>Keep building</strong>
+                                <small>Continue with your approved projects.</small>
+                            </span>
+                            <span class="next-arrow" aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                    <a href="support.html" class="support-note">
+                        <span class="support-note-icon">✳</span>
+
+                        <span>
+                            <strong>Have a question?</strong>
+                            <small>Get help from the Foundev team.</small>
+                        </span>
+
+                        <span class="next-arrow" aria-hidden="true">↗</span>
+                    </a>
+
+                </section>
+
+            </div>
+
+            <footer class="page-footer">
+                <span>FOUNDEV · STUDENT WORKSPACE</span>
+                <span>Learn. Build. Launch.</span>
+            </footer>
+
+        </div>
+    </main>
+</div>
+</body>
+</html>
